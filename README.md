@@ -34,32 +34,32 @@ exports.default = upload;
 
 
 ## API
-playcanvas(options)
+### playcanvas(options)
 
-### options.accessToken
+#### options.accessToken
 Required
 Type: `string`
 
-### options.scenes
+#### options.scenes
 Required
 Type: `array<number>`
 
-### options.projectId
+#### options.projectId
 Required
 Type: `number`
 
-### options.branchId
+#### options.branchId
 Required
 Type: `string`
 
-### options.projectName
+#### options.projectName
 Required
 Type: `string`
 
-### options.remotePath
+#### options.remotePath
 Required
 Type: `string`
 
 
-### License
+#### License
 MIT © [yushimatenjin](https://github.com/yushimatenjin)
