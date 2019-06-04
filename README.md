@@ -9,7 +9,7 @@ npm install --save gulp-playcanvas
 ```
 
 ## Useage
-1. dest以下のファイルがをすべてアップロード
+1. dest以下のファイルをすべてアップロード
 
 ```javascript
 import { src, dest } from "gulp";
