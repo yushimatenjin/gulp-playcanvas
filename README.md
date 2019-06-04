@@ -11,8 +11,8 @@ npm install --save gulp-playcanvas
 ## Useage
 1. dest以下のファイルをすべてアップロード
 
-`gulpfile.babel.js`
 ```javascript
+// gulpfile.babel.js
 import { src, dest } from "gulp";
 import playcanvas from "gulp-playcanvas";
 
