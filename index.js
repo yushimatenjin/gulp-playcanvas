@@ -1,4 +1,3 @@
-"use strict";
 const PlayCanvas = require("playcanvas-node").default;
 const through = require("through2");
 const gutil = require("gulp-util");

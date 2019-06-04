@@ -1,4 +1,11 @@
 {
+  "name": "gulp-playcanvas",
+  "version": "1.0.0",
+  "description": "upload files to playcanvas editor",
+  "repository": "git@github.com:yushimatenjin/gulp-playcanvas.git",
+  "author": "yushimatenjin <example@example.com>",
+  "license": "MIT",
+  "main": "index.js",
   "dependencies": {
     "gulp": "^4.0.2",
     "gulp-uglify": "^3.0.2",
@@ -6,6 +13,15 @@
     "playcanvas-node": "^1.0.8",
     "through2": "^3.0.1"
   },
+  "keywords": [
+    "gulpplugin",
+    "file",
+    "files",
+    "playcanvas",
+    "deploy",
+    "restapi",
+    "webgl"
+  ],
   "scripts": {
     "gulp": "gulp"
   },
