@@ -10,12 +10,35 @@ npm install --save gulp-playcanvas
 
 ## Useage
 
-## SASS, Pug, JSの更新を受け付けてアップロードをする
+### SASS, Pug, JSの更新を受け付けてアップロードをする
+
+1. 必要なライブラリをインストール 
+
+```bash
+npm init
+```
+
 ```bash
 npm install --save gulp gulp-playcanvas gulp-pug gulp-sass
 ```
 
+2. コンフィグファイルを設定
 ```javascript
+//config.js
+module.exports = {
+  accessToken: "accessToken",
+  scenes: [scene],
+  projectId: projectId,
+  branchId: "branchId", 
+  projectName: "projectName", 
+  remotePath: "remotePath" //PlayCanvasエディター上で配置したフォルダ (例, dev, web...)
+};
+
+```
+
+3. gulpfileを設置
+```javascript
+//gulpfile.js
 const gulp = require("gulp");
 const playcanvas = require("gulp-playcanvas");
 const pcOptions = require("./config");
@@ -51,20 +74,6 @@ gulp.task("watch", function() {
   gulp.watch("src/**/*.+(scss|sass)", gulp.task("sass"));
 });
 gulp.task("default", gulp.parallel("watch"));
-```
-
-
-```javascript
-//config.js
-module.exports = {
-  accessToken: "accessToken",
-  scenes: [scene],
-  projectId: projectId,
-  branchId: "branchId",
-  projectName: "projectName",
-  remotePath: "remotePath"
-};
-
 ```
 
 
