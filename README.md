@@ -9,28 +9,64 @@ npm install --save gulp-playcanvas
 ```
 
 ## Useage
-1. dest以下のファイルをすべてアップロード
+
+## SASS, Pug, JSの更新を受け付けてアップロードをする
+```bash
+npm install --save gulp gulp-playcanvas gulp-pug gulp-sass
+```
 
 ```javascript
-// gulpfile.babel.js
-import { src, dest } from "gulp";
-import playcanvas from "gulp-playcanvas";
+const gulp = require("gulp");
+const playcanvas = require("gulp-playcanvas");
+const pcOptions = require("./config");
+const pug = require("gulp-pug");
+const sass = require("gulp-sass");
 
-function upload() {
-  const options = {
-    accessToken: "***",
-    scenes: [***],
-    projectId: ***,
-    branchId: "xxx-xxx-xxx-xxx-xxx",
-    projectName: "xxx",
-    remotePath: "xxx"
-  };
-  return src("./dest/**").pipe(playcanvas(options));
-}
+gulp.task("pug", () => {
+  return gulp
+    .src(["src/**/*.pug", "!src/**/_*.pug"])
+    .pipe(pug())
+    .pipe(gulp.dest("dist/"))
+    .pipe(playcanvas(pcOptions));
+});
 
-exports.default = upload;
+gulp.task("js", () => {
+  return gulp
+    .src(["src/**/*.js", "!src/**/_*.js"])
+    .pipe(gulp.dest("dist/"))
+    .pipe(playcanvas(pcOptions));
+});
+
+gulp.task("sass", () => {
+  return gulp
+    .src("src/**/*.+(scss|sass)")
+    .pipe(sass())
+    .pipe(gulp.dest("dist/"))
+    .pipe(playcanvas(pcOptions));
+});
+
+gulp.task("watch", function() {
+  gulp.watch(["src/**/*.pug", "!src/**/_*.pug"], gulp.task("pug"));
+  gulp.watch(["src/**/*.js", "!src/**/_*.js"], gulp.task("js"));
+  gulp.watch("src/**/*.+(scss|sass)", gulp.task("sass"));
+});
+gulp.task("default", gulp.parallel("watch"));
+```
+
+
+```javascript
+//config.js
+module.exports = {
+  accessToken: "accessToken",
+  scenes: [scene],
+  projectId: projectId,
+  branchId: "branchId",
+  projectName: "projectName",
+  remotePath: "remotePath"
+};
 
 ```
+
 
 
 ## API
