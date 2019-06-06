@@ -1,3 +1,4 @@
+コードに変更があればPlayCanvasエディターの方を書き換えるためのサンプルです。
 
 ## Installation
 ```bash
@@ -27,3 +28,6 @@ module.exports = {
 ```bash
 yarn gulp
 ```
+
+### License
+MIT © yushimatenjin
