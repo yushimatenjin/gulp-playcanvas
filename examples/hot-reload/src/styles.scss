@@ -1,0 +1,24 @@
+header {
+  position: absolute;
+  z-index: 5;
+  width: 100vw;
+  background: #6ab04c;
+  padding: 1rem;
+  a {
+    color: #fff;
+    &:visited {
+      color: #fff;
+    }
+  }
+  .title {
+    font-size: 2rem;
+    color: #fff;
+  }
+  .g-navi {
+    display: flex;
+    &__item {
+      margin-left: 1rem;
+      font-size: 1.5rem;
+    }
+  }
+}
