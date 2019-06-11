@@ -9,55 +9,102 @@ npm install --save gulp-playcanvas
 ```
 
 ## Useage
-1. dest以下のファイルがをすべてアップロード
 
+### SASS, Pug, JSの更新を受け付けてアップロードをする
+
+1. 必要なライブラリをインストール 
+
+```bash
+npm init
+```
+
+```bash
+npm install --save gulp gulp-playcanvas gulp-pug gulp-sass
+```
+
+2. コンフィグファイルを設定
 ```javascript
-import { src, dest } from "gulp";
-import playcanvas from "gulp-playcanvas";
-
-function upload() {
-  const options = {
-    accessToken: "***",
-    scenes: [***],
-    projectId: ***,
-    branchId: "xxx-xxx-xxx-xxx-xxx",
-    projectName: "xxx",
-    remotePath: "xxx"
-  };
-  return src("./dest/**").pipe(playcanvas(options));
-}
-
-exports.default = upload;
+//config.js
+module.exports = {
+  accessToken: "accessToken",
+  scenes: [scene],
+  projectId: projectId,
+  branchId: "branchId", 
+  projectName: "projectName", 
+  remotePath: "remotePath" //PlayCanvasエディター上で配置したフォルダ (例, dev, web...)
+};
 
 ```
 
-## API
-playcanvas(options)
+3. gulpfileを設置
+```javascript
+//gulpfile.js
+const gulp = require("gulp");
+const playcanvas = require("gulp-playcanvas");
+const pcOptions = require("./config");
+const pug = require("gulp-pug");
+const sass = require("gulp-sass");
 
-### options.accessToken
+gulp.task("pug", () => {
+  return gulp
+    .src(["src/**/*.pug", "!src/**/_*.pug"])
+    .pipe(pug())
+    .pipe(gulp.dest("dist/"))
+    .pipe(playcanvas(pcOptions));
+});
+
+gulp.task("js", () => {
+  return gulp
+    .src(["src/**/*.js", "!src/**/_*.js"])
+    .pipe(gulp.dest("dist/"))
+    .pipe(playcanvas(pcOptions));
+});
+
+gulp.task("sass", () => {
+  return gulp
+    .src("src/**/*.+(scss|sass)")
+    .pipe(sass())
+    .pipe(gulp.dest("dist/"))
+    .pipe(playcanvas(pcOptions));
+});
+
+gulp.task("watch", function() {
+  gulp.watch(["src/**/*.pug", "!src/**/_*.pug"], gulp.task("pug"));
+  gulp.watch(["src/**/*.js", "!src/**/_*.js"], gulp.task("js"));
+  gulp.watch("src/**/*.+(scss|sass)", gulp.task("sass"));
+});
+gulp.task("default", gulp.parallel("watch"));
+```
+
+
+
+## API
+### playcanvas(options)
+
+#### options.accessToken
 Required
 Type: `string`
 
-### options.scenes
+#### options.scenes
 Required
 Type: `array<number>`
 
-### options.projectId
+#### options.projectId
 Required
 Type: `number`
 
-### options.branchId
+#### options.branchId
 Required
 Type: `string`
 
-### options.projectName
+#### options.projectName
 Required
 Type: `string`
 
-### options.remotePath
+#### options.remotePath
 Required
 Type: `string`
 
 
-### License
+#### License
 MIT © [yushimatenjin](https://github.com/yushimatenjin)

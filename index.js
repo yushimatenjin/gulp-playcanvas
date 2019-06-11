@@ -15,13 +15,17 @@ module.exports = options =>
     const playcanvas = new PlayCanvas(options);
     playcanvas.updateAssets(
       options.remotePath,
-      file.path.replace(file.base, "").replace("\\", ""),
+      file.path
+        .replace(file.base, "")
+        .replace("\\", "")
+        .replace("/", ""),
       file.path
     );
     console.log(
       `${file.path
         .replace(file.base, "")
-        .replace("\\", "")} >>> uploaded to PlayCanvas
+        .replace("\\", "")
+        .replace("/", "")} >>> uploaded to PlayCanvas
  
       ${options.remotePath}`
     );
