@@ -24,15 +24,16 @@ npm install --save gulp gulp-playcanvas gulp-pug gulp-sass
 
 2. コンフィグファイルを設定
 ```javascript
-//config.js
-module.exports = {
-  accessToken: "accessToken",
-  scenes: [scene],
-  projectId: projectId,
-  branchId: "branchId", 
-  projectName: "projectName", 
-  remotePath: "remotePath" //PlayCanvasエディター上で配置したフォルダ (例, dev, web...)
-};
+//playcanavas.json
+{
+  "accessToken": "",
+  "scenes": [],
+  "projectId": "",
+  "branchId": "",
+  "projectName": "",
+  "remotePath": ""
+}
+
 
 ```
 

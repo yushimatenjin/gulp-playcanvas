@@ -1,6 +1,6 @@
 {
   "name": "gulp-playcanvas",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "upload files to playcanvas editor",
   "repository": "git@github.com:yushimatenjin/gulp-playcanvas.git",
   "author": "yushimatenjin <example@example.com>",
@@ -10,7 +10,7 @@
     "gulp": "^4.0.2",
     "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8",
-    "playcanvas-node": "^1.1.1",
+    "playcanvas-node": "^1.1.2",
     "through2": "^3.0.1"
   },
   "keywords": [

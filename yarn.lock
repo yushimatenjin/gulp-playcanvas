@@ -2986,10 +2986,10 @@ pkg-dir@^3.0.0:
   dependencies:
     find-up "^3.0.0"
 
-playcanvas-node@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/playcanvas-node/-/playcanvas-node-1.1.1.tgz#4d1453cab339d3618482249e17335b52dd2656f9"
-  integrity sha512-RKeW9m/zIBkRyAiHDyRuZF5ZpmecxKdYTzlw1ckXJRqCDeQTXO6C9mTKp6rPtQ6LDGzU4RAYi4goJUcAjSea0Q==
+playcanvas-node@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/playcanvas-node/-/playcanvas-node-1.1.2.tgz#ee8dd66b9fa41b561acff7bd0af269c6ef2ff776"
+  integrity sha512-f/LuKHRu7UP7g9h9fhw9Xi7YcuFWJQsGW02kbLFef7Y4HxycjcbRxeMMyUPEF9pJKmgpsqyj+dM3ccuYXFsbiA==
   dependencies:
     axios "^0.18.0"
     form-data "^2.3.3"
