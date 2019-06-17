@@ -1,6 +1,6 @@
 const gulp = require("gulp");
 const playcanvas = require("gulp-playcanvas");
-const pcOptions = require("./config");
+const pcOptions = require("./playcanvas.json");
 const pug = require("gulp-pug");
 const sass = require("gulp-sass");
 
