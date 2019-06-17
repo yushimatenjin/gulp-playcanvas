@@ -1,6 +1,8 @@
 const PlayCanvas = require("playcanvas-node").default;
 const through = require("through2");
 const gutil = require("gulp-util");
+const path = require("path");
+
 module.exports = options =>
   through.obj(function(file, enc, callback) {
     if (file.isNull()) {
@@ -15,19 +17,13 @@ module.exports = options =>
     const playcanvas = new PlayCanvas(options);
     playcanvas.updateAssets(
       options.remotePath,
-      file.path
-        .replace(file.base, "")
-        .replace("\\", "")
-        .replace("/", ""),
+      path.basename(file.path),
       file.path
     );
     console.log(
-      `${file.path
-        .replace(file.base, "")
-        .replace("\\", "")
-        .replace("/", "")} >>> uploaded to PlayCanvas
- 
-      ${options.remotePath}`
+      `${path.basename(file.path)} >>> uploaded to PlayCanvas ${
+        options.remotePath
+      }`
     );
     return callback(null, file);
   });
