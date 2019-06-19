@@ -1,6 +1,6 @@
 {
   "name": "gulp-playcanvas",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "upload files to playcanvas editor",
   "repository": "git@github.com:yushimatenjin/gulp-playcanvas.git",
   "author": "yushimatenjin <example@example.com>",
