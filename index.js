@@ -20,10 +20,6 @@ module.exports = options =>
       path.basename(file.path),
       file.path
     );
-    console.log(
-      `${path.basename(file.path)} >>> uploaded to PlayCanvas ${
-        options.remotePath
-      }`
-    );
+  
     return callback(null, file);
   });
