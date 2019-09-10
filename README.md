@@ -1,6 +1,6 @@
 ## gulp-playcanvas
-指定したディレクトリにあるファイルをPlayCanvasのエディター上にアップロードをします。
-アップロードされるファイルは`.js`,`.html`,`.css`,`.txt`,`.json`となります。
+PlayCanvas gulp can upload to PlayCanvas. 
+Supported files : [`.js`,`.html`,`.css`,`.txt`,`.json`]
 
 ## Installation
 
