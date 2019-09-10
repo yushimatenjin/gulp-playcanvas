@@ -1,5 +1,5 @@
 ## gulp-playcanvas
-PlayCanvas gulp can upload to PlayCanvas. 
+PlayCanvas gulp can upload to PlayCanvas.   
 Supported files : [`.js`,`.html`,`.css`,`.txt`,`.json`]
 
 ## Installation
@@ -10,9 +10,9 @@ npm install --save gulp-playcanvas
 
 ## Useage
 
-### SASS, Pug, JSの更新を受け付けてアップロードをする
+### Hot realod 
 
-1. 必要なライブラリをインストール 
+1. Installation.
 
 ```bash
 npm init
@@ -22,7 +22,7 @@ npm init
 npm install --save gulp gulp-playcanvas gulp-pug gulp-sass
 ```
 
-2. コンフィグファイルを設定
+2. add playcanvas.json
 ```javascript
 //playcanavas.json
 {
@@ -37,7 +37,7 @@ npm install --save gulp gulp-playcanvas gulp-pug gulp-sass
 
 ```
 
-3. gulpfileを設置
+3. add gulpfile.js
 ```javascript
 //gulpfile.js
 const gulp = require("gulp");
