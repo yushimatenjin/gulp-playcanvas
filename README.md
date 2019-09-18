@@ -8,7 +8,7 @@ Supported files : [`.js`,`.html`,`.css`,`.txt`,`.json`]
 npm install --save gulp-playcanvas
 ```
 
-## Useage
+## Features
 
 ### Hot realod 
 
@@ -77,7 +77,7 @@ gulp.task("watch", function() {
 gulp.task("default", gulp.parallel("watch"));
 ```
 
-
+###
 
 ## API
 ### playcanvas(options)
