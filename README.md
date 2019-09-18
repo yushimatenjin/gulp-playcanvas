@@ -1,5 +1,5 @@
 ## gulp-playcanvas
-PlayCanvas gulp can upload to PlayCanvas.   
+This Plugin can upload to PlayCanvas.   
 Supported files : [`.js`,`.html`,`.css`,`.txt`,`.json`]
 
 ## Installation
