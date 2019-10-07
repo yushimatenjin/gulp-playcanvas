@@ -1,11 +1,8 @@
 {
   "name": "gulp-playcanvas",
-  "version": "1.1.0",
   "description": "upload files to playcanvas editor",
-  "repository": "git@github.com:yushimatenjin/gulp-playcanvas.git",
+  "version": "1.1.0",
   "author": "yushimatenjin <example@example.com>",
-  "license": "MIT",
-  "main": "index.js",
   "dependencies": {
     "gulp": "^4.0.2",
     "gulp-uglify": "^3.0.2",
@@ -14,21 +11,24 @@
     "playcanvas-node": "latest",
     "through2": "^3.0.1"
   },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/register": "^7.6.2"
+  },
   "keywords": [
-    "gulpplugin",
+    "deploy",
     "file",
     "files",
+    "gulpplugin",
     "playcanvas",
-    "deploy",
     "restapi",
     "webgl"
   ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "git@github.com:yushimatenjin/gulp-playcanvas.git",
   "scripts": {
     "gulp": "gulp"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/register": "^7.4.4"
   }
 }
