@@ -8,13 +8,13 @@
     "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8",
     "jest": "^24.8.0",
-    "playcanvas-node": "^1.4.5",
+    "playcanvas-node": "^1.4.6",
     "through2": "^3.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
-    "@babel/register": "^7.6.2"
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/register": "^7.7.0"
   },
   "keywords": [
     "deploy",
