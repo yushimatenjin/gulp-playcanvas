@@ -4,10 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "browser-sync": "^2.26.5",
+    "browser-sync": "^2.26.13",
     "gulp": "^4.0.2",
-    "gulp-playcanvas": "latest",
+    "gulp-playcanvas": "1.1.4",
     "gulp-pug": "^4.0.1",
-    "gulp-sass": "^4.0.2"
+    "gulp-sass": "^4.1.0"
   }
 }
