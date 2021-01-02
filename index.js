@@ -4,21 +4,23 @@ const gutil = require("gulp-util");
 const path = require("path");
 
 module.exports = options =>
-  through.obj(function(file, enc, callback) {
+  through.obj( async function(file, enc, callback) {
     if (file.isNull()) {
       return callback(null, file);
     }
-
+    
     if (file.isStream()) {
       return cb(
         new gutil.PluginError("gulp-playcanvas", "Streaming not supported")
       );
     }
+    
     const playcanvas = new PlayCanvas(options);
-    playcanvas.updateAssets(
+    await playcanvas.updateAssetsStrict(
       options.remotePath,
       path.basename(file.path),
-      file.path
+      file.path,
+      "dist"
     );
   
     return callback(null, file);
