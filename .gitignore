@@ -90,3 +90,4 @@ typings/
 # End of https://www.gitignore.io/api/node
 playcanvas.json
 examples/hot-reload/dist/
+.DS_Store
