@@ -1,35 +1,51 @@
 const gulp = require("gulp");
-const playcanvas = require("gulp-playcanvas");
+const playcanvas = require("../../index");
 const pcOptions = require("./playcanvas.json");
 const pug = require("gulp-pug");
 const sass = require("gulp-sass");
 
-gulp.task("pug", () => {
+const paths = {
+  js: {
+    src: "src/**/*.js"
+  },
+  sass: {
+    src: "src/**/*.+(scss|sass)"
+  },
+  pug: {
+    src: "src/**/*.pug"
+  }
+}
+
+const html = () => {
   return gulp
-    .src(["src/**/*.pug", "!src/**/_*.pug"])
+    .src(paths.pug.src)
     .pipe(pug())
     .pipe(gulp.dest("dist/"))
-    .pipe(playcanvas(pcOptions));
-});
+    .pipe(playcanvas(pcOptions))
 
-gulp.task("js", () => {
+}
+
+const js = () => {
   return gulp
-    .src(["src/**/*.js", "!src/**/_*.js"])
+    .src(paths.js.src, {
+      since: gulp.lastRun(js)
+    })
     .pipe(gulp.dest("dist/"))
-    .pipe(playcanvas(pcOptions));
-});
+    .pipe(playcanvas(pcOptions))
 
-gulp.task("sass", () => {
+}
+
+const css = () => {
   return gulp
-    .src("src/**/*.+(scss|sass)")
+    .src(paths.sass.src)
     .pipe(sass())
     .pipe(gulp.dest("dist/"))
-    .pipe(playcanvas(pcOptions));
-});
+    .pipe(playcanvas(pcOptions))
+}
 
-gulp.task("watch", function() {
-  gulp.watch(["src/**/*.pug", "!src/**/_*.pug"], gulp.task("pug"));
-  gulp.watch(["src/**/*.js", "!src/**/_*.js"], gulp.task("js"));
-  gulp.watch("src/**/*.+(scss|sass)", gulp.task("sass"));
+gulp.task("watch", function () {
+  gulp.watch(paths.pug.src, html);
+  gulp.watch(paths.js.src, js);
+  gulp.watch(paths.sass.src, css);
 });
-gulp.task("default", gulp.parallel("watch"));
+gulp.task("default", gulp.parallel("watch"))
