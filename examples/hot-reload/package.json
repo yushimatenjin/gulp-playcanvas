@@ -11,6 +11,6 @@
     "gulp-sass": "^4.1.0"
   },
   "devDependencies": {
-    "@types/playcanvas": "^1.23.0"
+    "playcanvas": "^1.37.1"
   }
 }
