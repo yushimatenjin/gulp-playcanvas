@@ -4,13 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "browser-sync": "^2.26.13",
+    "browser-sync": "^2.26.14",
     "gulp": "^4.0.2",
     "gulp-playcanvas": "latest",
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.1.0"
   },
   "devDependencies": {
-    "playcanvas": "^1.37.1"
+    "playcanvas": "latest"
   }
 }
